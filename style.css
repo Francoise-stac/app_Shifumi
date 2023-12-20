@@ -1,0 +1,121 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#home-container, #game-container, #result-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+}
+
+form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#choices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#choices button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#choices button:hover {
+    background-color: transparent;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Ajoutez ces styles pour améliorer la mise en page */
+#game-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#choices {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#choices button {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#options {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#options a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+}
+
+#options a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
