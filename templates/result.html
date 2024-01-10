@@ -1,0 +1,112 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Shifumi Game - Result</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4">Shifumi Game Result</h1>
+
+        <div id="result" class="mt-3">
+            <h2>Result</h2>
+            <p>Hello, {{ username }}!</p>
+            <p>You chose <strong>{{ user_choice }}</strong>.</p>
+            <p>Computer chose <strong>{{ computer_choice }}</strong>.</p>
+
+            {% if result %}
+                <p class="lead">{{ result }}</p>
+            {% endif %}
+
+            <p>Round: {{ round }}</p>
+            <p>Player Score: {{ player_score }}</p>
+            <p>Computer Score: {{ computer_score }}</p>
+            <p>Rounds won by Player: {{ rounds_won_by_player }}</p>
+            <p>Rounds won by Computer: {{ rounds_won_by_computer }}</p>
+        </div>
+
+        {% if rounds_won_by_player == 3 or rounds_won_by_computer == 3 %}
+            <p class="lead">Game Over! 
+                {% if rounds_won_by_player == 3 %}
+                    Player wins!
+                {% elif rounds_won_by_computer == 3 %}
+                    Computer wins!
+                {% endif %}
+            </p>
+            <a href="{{ url_for('play', username=username) }}" class="btn btn-primary mt-3">Play Again</a>
+        {% else %}
+            <a href="{{ url_for('play', username=username) }}" class="btn btn-primary mt-3">Play Again</a>
+        {% endif %}
+
+        <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3">Logout</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Shifumi Game - Result</title>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="display-4">Shifumi Game Result</h1>
+
+        <!-- Section Résultat du Tour -->
+        <div id="round-result" class="mt-3">
+            <h2>Round Result</h2>
+            <p>Hello, {{ username }}!</p>
+            <p>You chose <strong>{{ user_choice }}</strong>.</p>
+            <p>Computer chose <strong>{{ computer_choice }}</strong>.</p>
+            <p class="lead">{{ result }}</p>
+        </div>
+
+        <!-- Séparation visuelle -->
+        <hr>
+
+        <!-- Section Score et Rounds -->
+        <div id="game-info">
+            <h2>Game Info</h2>
+            <p>Round: {{ round }}</p>
+            <p>Player Score: {{ player_score }}</p>
+            <p>Computer Score: {{ computer_score }}</p>
+            <p>Rounds won by Player: {{ rounds_won_by_player }}</p>
+            <p>Rounds won by Computer: {{ rounds_won_by_computer }}</p>
+        </div>
+
+        {% if rounds_won_by_player == 3 or rounds_won_by_computer == 3 %}
+            <p class="lead">Game Over! 
+                {% if rounds_won_by_player == 3 %}
+                    Player wins!
+                {% elif rounds_won_by_computer == 3 %}
+                    Computer wins!
+                {% endif %}
+            </p>
+            <a href="{{ url_for('play') }}" class="btn btn-primary mt-3">Play Again</a>
+        {% else %}
+            <a href="{{ url_for('play') }}" class="btn btn-primary mt-3">Play Again</a>
+        {% endif %}
+
+        <a href="{{ url_for('logout') }}" class="btn btn-danger mt-3">Logout</a>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
